@@ -14,7 +14,7 @@ import org.hibernate.annotations.IdGeneratorType;
 @Setter
 @Table(name="UserEntity")
 @Entity
-public class UserEntity {
+public class UserEntity implements Comparable<UserEntity>{
     @Id
     @GeneratedValue
     private int id;
@@ -23,4 +23,8 @@ public class UserEntity {
     @Column
     private String email;
 
+    @Override
+    public int compareTo(UserEntity o) {
+        return this.getName().compareTo(name);
+    }
 }

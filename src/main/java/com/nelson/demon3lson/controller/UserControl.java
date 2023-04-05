@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -15,8 +16,10 @@ public class UserControl {
     UserRepo userRepo;
     @GetMapping
     public ResponseEntity<List<UserEntity>> getAll(){
-       if(userRepo.findAll().isEmpty())
+        List<UserEntity>list=userRepo.findAll();
+       if(list.isEmpty())
            return ResponseEntity.noContent().build();
+        Collections.sort(list);
         return ResponseEntity.ok(userRepo.findAll());
     }
     @PostMapping("/{id}")
