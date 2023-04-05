@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM openjdk:8
 #RUN apt-get update && apt-get install -y openjdk-8-jdk
 ADD target/demo-n3lson-0.0.1-SNAPSHOT.jar demo-n3lson-0.0.1-SNAPSHOT.jar
 WORKDIR /usr/local/bin/
