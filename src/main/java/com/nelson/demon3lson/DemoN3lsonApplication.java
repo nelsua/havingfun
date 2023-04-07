@@ -7,7 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoN3lsonApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(DemoN3lsonApplication.class, args);
+	}
+
+	static void hol(){
+		System.out.println("hola mundo");
 	}
 
 }
